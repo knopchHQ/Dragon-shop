@@ -201,7 +201,7 @@ footer {
 /* ===== Lore Page ===== */
 
 body.lore-page {
-  background: url('/Dragon shop/thumbnails/scroll-bg.jpg') repeat-y center top;
+  background: url('/Dragon-shop/thumbnails/scroll-bg.jpg') repeat-y center top;
   background-size: cover;
   background-attachment: fixed;
   font-family: 'Georgia', serif;
