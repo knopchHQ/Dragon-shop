@@ -1,0 +1,284 @@
+/* ===== General settings ===== */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(#f5f0e6, #e1d3c1);
+  color: #2c1b0f;
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+  background: #5e3b2c;
+  color: #f3e4ca;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+}
+
+header h1.introduction {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-family: 'Papyrus', fantasy;
+}
+
+/* ===== Navigation ===== */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rep;
+}
+nav a {
+  color: #ff35b4;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+/* ===== Hero-Section ===== */
+
+.hero {
+  background: #d6bfa3;
+  padding: 2rem;
+  text-align: center;
+  border-top: 4px solid #5e3b2c;
+  border-bottom: 4px solid #5e3b2c;
+}
+
+.hero h2 {
+  font-size: 2rem;
+}
+
+.span-hero {
+  display: block;
+  font-size: 1.2rem;
+  color: #7c3a14;
+  margin-top:0.3rem;
+}
+
+/* ===== Catalog ===== */
+
+.catalog {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.catalog h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.dragon-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+/* ===== Dragon Card ===== */
+
+.dragon-card {
+  background: #fff8ee;
+  border: 2px solid #c6a36d;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 260px;
+  text-align: center;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.dragon-card:hover {
+  transform: scale(1.03);
+}
+
+.img-dragon-card {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* ===== Color accents ===== */
+.fire {
+  color: #cc3300;
+  font-weight: bold;
+}
+
+.ice {
+  color: #0099cc;
+}
+
+.storm {
+  color: #8b00ff;
+}
+
+.nature {
+  color: #228b22;
+}
+
+.shadow {
+  color: #2f2f2f;
+}
+
+.uncommon {
+  color: #4682B4;
+}
+
+
+.rare {
+  color: #4b0082;
+  font-style: italic;
+}
+
+.epic {
+  color: #9932cc;
+}
+
+.legendary {
+  color: gold;
+  font-weight: bold;
+}
+
+/* ===== Buy button ===== */
+
+.buy {
+  background: #6d2c15;
+  color: #fff2d9;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.buy:hover {
+  background: #8b3b1f;
+}
+
+/* ===== Footer ===== */
+
+footer {
+  background: #5e3b2c;
+  color: #f3e4ca;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* ===== Lore Page ===== */
+
+body.lore-page {
+  background: url('/Dragon shop/thumbnails/scroll-bg.jpg') repeat-y center top;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Georgia', serif;
+  color: #2c1b0f;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.lore-scroll {
+  background: rgba(255, 248, 220, 0.9);
+  border: 5px double #8b5a2b;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  animation: scroll-unfold 1.5s ease-out;
+  overflow: hidden;
+  transform-origin:top;
+}
+.dragon-title {
+  text-align: center;
+  font-family: 'Papyrus', fantasy;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  color: #5e3b2c;
+  border-bottom: 2px solid #c6a36d;
+  padding-bottom: 0.3rem;
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.lore-scroll p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-top: 0.5rem;
+  text-indent: 1.5rem;
+}
+
+@keyframes scrollFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    text-shadow:
+    0 0 8px white,
+    0 0 12px currentColor,
+    0 0 16px currentColor;
+  }
+  50% {
+    text-shadow:
+      0 0 16px white,
+      0 0 24px currentColor,
+      0 0 32px currentColor;
+  }
+}
+
+@keyframes scroll-unfold {
+  0% {
+    max-height: 0;
+    padding: 0 2rem;
+    opacity: 0;
+    transform: scaleY(0.8);
+  }
+  100% {
+    max-height: 200px;
+    padding: 2rem;
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+/* Colors and glows by types */
+
+.fire-glow {
+  color: #ff4500;
+}
+
+.ice-glow {
+  color: #00bfff;
+}
+
+.storm-glow {
+  color: #9d00ff;
+}
+.nature-glow {
+  color: #32cd32;
+}
+
+.shadow-glow {
+  color: #000d5f;
+}
