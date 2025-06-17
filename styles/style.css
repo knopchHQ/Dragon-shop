@@ -91,7 +91,8 @@ nav a:hover {
 .dragon-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
+  align-items: flex-start;
   justify-content: center;
   padding: 2rem 0;
 }
@@ -99,13 +100,16 @@ nav a:hover {
 /* ===== Dragon Card ===== */
 
 .dragon-card {
+  position: relative;
   background: #fff8ee;
   border: 2px solid #c6a36d;
-  border-radius: 12px;
+  border-radius: 1rem;
   padding: 1rem;
-  width: 260px;
+  width: 18rem;
+  margin: 1rem;
   text-align: center;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
   transition: transform 0.3s ease;
 }
 
@@ -118,6 +122,46 @@ nav a:hover {
   height: auto;
   border-radius: 8px;
   margin-bottom: 1rem;
+}
+
+.dragon-description {
+  margin-top: 0.75rem;
+  padding: 0.625rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  display: none; /* will toggle through JS */
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.dragon-description.active {
+  display: block;
+  opacity: 1;
+  max-height: 500px;
+}
+
+.toggle-description {
+  margin-top: 0.625rem;
+  padding: 0.375rem 0.75rem;
+  background-color: #4a1d1d;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Cinzel', sherif;
+  font-size: 0.9rem;
+}
+
+.toggle-description:hover {
+  background-color: #721c1c;
+  transform: scale(1.05);
 }
 
 /* ===== Color accents ===== */
@@ -180,11 +224,12 @@ nav a:hover {
   margin-top: 1rem;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .buy:hover {
-  background: #8b3b1f;
+  background-color: #8b3b1f;
+  transform: scale(1.05);
 }
 
 /* ===== Footer ===== */
@@ -201,7 +246,7 @@ footer {
 /* ===== Lore Page ===== */
 
 body.lore-page {
-  background: url('/Dragon shop/thumbnails/scroll-bg.jpg') repeat-y center top;
+  background: url('/Dragon-shop/thumbnails/scroll-bg.jpg') repeat-y center top;
   background-size: cover;
   background-attachment: fixed;
   font-family: 'Georgia', serif;

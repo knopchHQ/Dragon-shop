@@ -19,3 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document.querySelectorAll('.toggle-description').forEach(button => {
+  button.addEventListener('click', () => {
+    const description = button.nextElementSibling;
+    description.classList.toggle('active');
+  });
+});
