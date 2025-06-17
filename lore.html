@@ -9,9 +9,11 @@
 </head>
 <body class="lore-page">
   <header>
-    <h1>Dragon Lore</h1>
-    <nav>
-      <ul>
+    <h1 class="introduction">Dragon Lore</h1>
+    <nav class="navbar">
+      <div class="logo">🐉</div>
+      <div class="burger" onclick="toggleMenu()">&#9776;</div>
+      <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="catalog.html">Catalog</a></li>
         <li><a href="lore.html" aria-current="page">Lore</a></li>
@@ -53,5 +55,6 @@
     <p>&copy; 2025 Dragon Shop. All rights reserved.</p>
   </footer>
   <script src="scripts/lore-script.js"></script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>

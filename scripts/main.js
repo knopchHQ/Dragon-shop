@@ -1,3 +1,8 @@
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.classList.toggle("active");
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const buyButtons = document.querySelectorAll(".buy");
 

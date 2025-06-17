@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Dragon Mail</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="icon" href="thumbnails/icon.jpg">
+</head>
+<body class="contact-page">
+  <header>
+    <h1 class="introduction">Dragon Mail</h1>
+    <nav class="navbar">
+      <div class="logo">🐉</div>
+      <div class="burger" onclick="toggleMenu()">&#9776;</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <h2>Send Us a Message</h2>
+      <form action="mailto:test@gmail.com" method="post" enctype="text/plain">
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="name" required><br>
+        
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="msg">Message</label><br>
+        <textarea id="msg" name="message" rows="5" required></textarea><br>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Dragon Shop. All rights reserved.</p>
+  </footer>
+</body>
+</html>
