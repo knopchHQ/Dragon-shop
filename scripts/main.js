@@ -1,8 +1,24 @@
+// Burger-Menu
 function toggleMenu() {
-  const nav = document.getElementById("navLinks");
-  nav.classList.toggle("active");
+  const menu = document.getElementById("burger-menu");
+  menu.classList.toggle("active");
+
+  // Reset animation to play again
+  const items = menu.querySelectorAll("li");
+  items.forEach((item, i) => {
+    void item.offsetWidth; //reset animation
+    item.style.animation = `slideIn 0.4s ease forwards ${i * 0.1}s`;
+  });
 }
 
+// Auto-collapse when clicking on a link
+document.querySelectorAll('#burger-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('burger-menu').classList.remove('active');
+  });
+});
+
+// Buy-Button
 document.addEventListener("DOMContentLoaded", function () {
   const buyButtons = document.querySelectorAll(".buy");
 
@@ -25,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Description-Button
 document.querySelectorAll('.toggle-description').forEach(button => {
   button.addEventListener('click', () => {
     const description = button.nextElementSibling;

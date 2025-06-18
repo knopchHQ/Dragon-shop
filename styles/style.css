@@ -39,66 +39,57 @@ header h1.introduction {
   border-radius: 12px;
   z-index: 1000;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
-  gap: 0.5rem;
+  gap: 0.25rem;
   font-family: 'Papyrus', fantasy;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  padding: 0.1rem 1rem;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-}
-
-nav a {
-  color: #ffd700;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #fff2d9;
-}
-
-.logo {
+.logo-button {
   color: #ff6a00;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-family: var(--font-glow);
   text-shadow:
   0 0 6px #ff6a00,
   0 0 12px #ffa500,
   0 0 18px #ffb84d;
-  cursor: default;
-  user-select: none;
-}
-
-.burger {
-  display: none;
-  font-size: 1.8rem;
   cursor: pointer;
-  color: #ffd966;
   user-select: none;
+  padding: 0.4rem 0.6rem;
+  align-self: flex-end;
+  transition: 
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
 }
 
-.nav-links {
+.burger-menu {
   list-style: none;
   display: flex;
+  flex-direction: column;
   gap: 0.75rem;
   width: 100%;
   margin: 0;
   padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-0.625rem);
+  transition: 
+    max-height 0.4s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
-.nav-links a {
+.burger-menu.active {
+  max-height: 31.25rem;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.burger-menu a {
   font-size: 1rem;
   color: #ffe066;
   text-decoration: none;
   font-weight: 600;
-  padding: 0.15rem 0.3rem;
+  padding: 0.15rem 0rem;
   display: block;
   transition: 
     color 0.3s ease,
@@ -107,13 +98,53 @@ nav a:hover {
   text-shadow: 0 0 3px #ffcc33;
 }
 
-.nav-links li a:hover,
-.nav-links li a[aria-current="page"] {
+.burger-menu li {
+  opacity: 0;
+  transform: translateY(-1rem);
+  animation: slideIn 0.4s ease forwards;
+}
+
+.logo-button:hover {
+  transform: scale(1.1);
+  text-shadow:
+    0 0 8px #ffaa33,
+    0 0 14px #ffcc66,
+    0 0 22px #fff2a8;
+}
+
+.burger-menu li a:hover,
+.burger-menu li a[aria-current="page"] {
   color: #fff2b2;
   background-color: #b35f0e;
   text-shadow:
     0 0 10px #fff8a6,
     0 0 20px #ffbb00;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Separate delay for each item */
+
+.burger-menu li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.burger-menu li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.burger-menu li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.burger-menu li:nth-child(4) {
+  animation-delay: 0.4s;
 }
 
 /* ===== Hero-Section ===== */
@@ -298,12 +329,41 @@ nav a:hover {
 /* ===== Footer ===== */
 
 footer {
-  background: #5e3b2c;
-  color: #f3e4ca;
+  margin-top: 3rem;
+  padding: 1.5rem 1rem;
+  background: linear-gradient(90deg, #3b1f1f, #2c1a10);
+  color: #ffd700;
   text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-  font-size: 0.9rem;
+  font-family: 'Papyrus', fantasy;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
+  border-top: 2px solid #ff8c00;
+}
+
+.footer-glow {
+  font-size: 1.3rem;
+  text-shadow:
+    0 0 6px #ff6600,
+    0 0 12px #ffa500,
+    0 0 18px #ffcc66;
+  margin-bottom: 0.5rem;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  color: #ffe066;
+  margin: 0.2rem 0;
+}
+
+.footer-credits {
+  font-size: 0.8rem;
+  color: #c9b37e;
+  margin-top: 0.5rem;
+}
+
+footer a {
+  color: #a08e64;
+  text-decoration: none;
+  font-size: 0.8rem;
 }
 
 /* ===== Lore Page ===== */
@@ -378,6 +438,30 @@ body.lore-page {
   100% {
     max-height: 2000px; /* must be greater than actual height */
   }
+}
+/* Footer for Lore page */
+.footer-lore {
+  opacity: 0;
+  transform: translateY(3.125rem);
+  transition: opacity 1.5s, transform 1.5s ease;
+  text-align: center;
+  margin-top: 3rem auto;
+  color: #5e3b2c;
+  font-family: 'Papyrus', fantasy;
+  font-size: 1rem;
+}
+
+.footer-lore.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-glow {
+  font-size: 1.4rem;
+  text-shadow: 
+    0 0 8px #ffbb33,
+    0 0 14px #ffdd66;
+  margin-bottom: 0.3rem;
 }
 
 /* Colors and glows by types */
@@ -498,56 +582,46 @@ body.contact-page {
 
 @media (max-width: 768px) {
   header h1.introduction {
-    font-size: 1.2rem;
-    padding: 1rem;
+    font-size: 1.125rem;
+    padding: 1.25rem;
+    line-height: 1.6;
     text-align: center;
+    margin: 0 auto;
   }
 
-  nav {
-    position: static;
-    margin: 1rem auto;
+  .navbar {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    gap: 0.4rem;
+  }
+  
+  .logo-button {
+    font-size: 1.4rem;
+    align-self: center;
+    padding: 0.3rem;
+  }
+  
+  .burger-menu {
+    width: 100%;
+    padding: 0.25rem 0;
+    align-items: center;
     text-align: center;
     background: none;
     box-shadow: none;
-    top: 0.5rem;
-    right: 0.5rem;
-    padding: 0.3rem 0.7rem;
+    margin: none;
   }
   
-  nav ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    padding: 0;
-    background-color: #5c3626;
-    border-radius: 1rem;
-    flex-direction: column;
-    align-items: flex-start;
+  .burger-menu a {
+    font-size: 1rem;
+    padding: 0.3rem 0.6rem;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: unset;
+    display: inline-block;
   }
 
-  nav li {
-    list-style: none;
-  }
-  
-  .burger {
-    display: block;
-  }
-  
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 3.2rem;
-    right: 0.8rem;
-    flex-direction: column;
-    background-color: #5e3b2cdd;
-    padding: 1rem;
-    border: 1px solid #fff;
-    border-radius: 12px;
-    box-shadow: 0 0 18px #ffbb33;
-  }
-
-  .nav-links.active {
+  .burger-menu.active {
     display: flex;
   }
 
@@ -574,8 +648,13 @@ body.contact-page {
   }
 
   .dragon-card {
+    width: 80%;
+    margin: 3rem auto;
+  }
+
+  .dragon-card img {
     width: 90%;
-    margin: 0 auto;
+    height: auto;
   }
 
   .dragon-title {
@@ -608,12 +687,12 @@ body.contact-page {
 
   footer {
     font-size: 0.8rem;
-    padding: 0.75rem;
+    padding: 1rem 0.6rem;
   }
 }
 
 @media (max-width: 480px) {
-  nav {
+  .navbar {
     padding: 0.5rem;
   }
 
@@ -622,7 +701,16 @@ body.contact-page {
   }
 
   .dragon-card {
-    padding: 0.8rem;
+    width: 95%;
+    padding: 0.625rem;
+  }
+
+  .dragon-card h2 {
+    font-size: 1.125rem;
+  }
+
+  .dragon-card p {
+    font-size: 0.875rem;
   }
 
   .dragon-description {

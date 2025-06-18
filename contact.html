@@ -8,18 +8,19 @@
   <link rel="icon" href="thumbnails/icon.jpg">
 </head>
 <body class="contact-page">
-  <header>
-    <h1 class="introduction">Dragon Mail</h1>
+  
     <nav class="navbar">
-      <div class="logo">🐉</div>
-      <div class="burger" onclick="toggleMenu()">&#9776;</div>
-      <ul class="nav-links" id="navLinks">
+      <div class="logo-button" onclick="toggleMenu()">🐉</div>
+      <ul class="burger-menu" id="burger-menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="catalog.html">Catalog</a></li>
         <li><a href="lore.html">Lore</a></li>
         <li><a href="contact.html" aria-current="page">Contact</a></li>
       </ul>
     </nav>
+    
+  <header>
+    <h1 class="introduction">Dragon Mail</h1>
   </header>
 
   <main>
@@ -41,7 +42,11 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Dragon Shop. All rights reserved.</p>
+    <div class="footer-glow">🐉 Dragon Shop</div>
+    <p class="footer-text">Forged in flame. Powered by magic. ✨</p>
+    <p class="footer-credits">&copy; 2025 Dragon Shop. All rights reserved.</p>
+    <p class="footer-credits"><a href="mailto:contact@dragonshop.com">contact@dragonshop.com</a></p>
   </footer>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
