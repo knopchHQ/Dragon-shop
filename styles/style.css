@@ -329,14 +329,23 @@ header h1.introduction {
 /* ===== Footer ===== */
 
 footer {
-  margin-top: 3rem;
+  opacity: 0;
+  transform: translateY(3.125rem);
+  transition: opacity 1.5s, transform 1.5s ease;
+  margin-top: 3rem auto;
+  font-family: 'Papyrus', fantasy;
+  font-size: 1rem;
   padding: 1.5rem 1rem;
   background: linear-gradient(90deg, #3b1f1f, #2c1a10);
   color: #ffd700;
   text-align: center;
-  font-family: 'Papyrus', fantasy;
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
   border-top: 2px solid #ff8c00;
+}
+
+footer.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .footer-glow {
@@ -364,6 +373,68 @@ footer a {
   color: #a08e64;
   text-decoration: none;
   font-size: 0.8rem;
+}
+
+/* ===== Catalog Page ===== */
+
+.catalog-page {
+  background: url('/Dragon-shop/thumbnails/scroll-bg.jpg') repeat-y center top;
+  padding: 5rem 1rem 3rem;
+  text-align: center;
+  color: #3b2b1c;
+}
+
+.catalog-page h1 {
+  font-family: 'Papyrus', fantasy;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 8px #d4a373;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  grid-gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.catalog-card {
+  font-size: 1rem;
+  background: rgba(255, 248, 220, 0.9);
+  border: 3px ridge #8b5a2b;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  min-height: 2em;
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.catalog-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.catalog-card img {
+  width: 100%;
+  height: 9.375rem;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.catalog-card h3 {
+  font-family: 'Papyrus', fantasy;
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.short-desc {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  min-height: 2em;
 }
 
 /* ===== Lore Page ===== */
@@ -438,30 +509,6 @@ body.lore-page {
   100% {
     max-height: 2000px; /* must be greater than actual height */
   }
-}
-/* Footer for Lore page */
-.footer-lore {
-  opacity: 0;
-  transform: translateY(3.125rem);
-  transition: opacity 1.5s, transform 1.5s ease;
-  text-align: center;
-  margin-top: 3rem auto;
-  color: #5e3b2c;
-  font-family: 'Papyrus', fantasy;
-  font-size: 1rem;
-}
-
-.footer-lore.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.footer-glow {
-  font-size: 1.4rem;
-  text-shadow: 
-    0 0 8px #ffbb33,
-    0 0 14px #ffdd66;
-  margin-bottom: 0.3rem;
 }
 
 /* Colors and glows by types */
@@ -659,6 +706,11 @@ body.contact-page {
 
   .dragon-title {
     font-size: 1.2rem;
+  }
+
+  .dragon-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
   }
 
   .toggle-description,

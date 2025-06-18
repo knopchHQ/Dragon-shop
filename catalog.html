@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catalog | Dragon Shop</title>
   <link rel="stylesheet" href="styles/style.css">
-  <link rel="icon" href="/thumbnails/icon.jpg">
+  <link rel="icon" href="thumbnails/icon.jpg">
 </head>
-<body class="catalog-page">
+<body>
   
     <nav class="navbar">
       <div class="logo-button" onclick="toggleMenu()">🐉</div>
@@ -19,14 +19,47 @@
       </ul>
     </nav>
 
-    <header>
-      <h1>🐉 Dragon Catalog</h1>
-      <p>Meet our legendary dragons. Choose your guardian.</p>
+    <header class="catalog-header">
+      <h1 class="introduction">Meet our legendary dragons. Choose your guardian.</p>
     </header>
 
-    <main class="catalog-grid">
-      <section class="dragon-card fire-dragon">
-        <img src="thumbnails/fire-dragon.jpg" alt="Image of a Fire Dragon breathing fire">
+    <main>
+      <section class="hero">
+        <h2>🐉 Dragon Catalog<span class="span-hero">best for heroes!</span></h2>
+      </section>
+
+      <section class="catalog-page">
+        <div class="catalog-grid">
+
+          <article class="catalog-card">
+            <img class="img-dragon-card" src="thumbnails/Fire-Dragon.jpg" alt="Image of a Fire Dragon breathing fire">
+            <h3 class="dragon-title fire-glow glow-pulse">🔥 Fire Dragon</h3>
+            <button class="toggle-description">Read more</button>
+            <div class="dragon-description hidden">
+              <p>
+                Born in the heart of volcanoes, the Fire Dragon scorches enemies with blazing breath and guards ancient treasures. Its scales radiate heat strong enough to melt steel.
+              </p>
+            </div>
+            <p class="short-desc">Master of flames and volcanoes.</p>
+            <p class="price">800G</p>
+            <button class="buy">Buy</button>
+          </article>
+
+          <article class="catalog-card">
+            <img class="img-dragon-card" src="thumbnails/Ice-Wyrm.jpg" alt="Image of an Ice Wyrm">
+            <h3 class="dragon-title ice-glow glow-pulse">❄️ Ice Wyrm</h3>
+            <button class="toggle-description">Read more</button>
+
+            <div class="dragon-description hidden">
+              <p>
+                Ruler of the frozen wastelands, the Ice Wyrm freezes everything in its path. Its breath turns air into frost and enemies into ice statues.
+              </p>
+            </div>
+            <p class="short-desc">Silent guardian of the frozen wastes.</p>
+            <p class="price">600G</p>
+            <button class="buy">Buy</button>
+          </article>
+        </div>
       </section>
     </main>
 
@@ -36,5 +69,8 @@
       <p class="footer-credits">&copy; 2025 Dragon Shop. All rights reserved.</p>
       <p class="footer-credits"><a href="mailto:contact@dragonshop.com">contact@dragonshop.com</a></p>
     </footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="scripts/catalog-script.js"></script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
