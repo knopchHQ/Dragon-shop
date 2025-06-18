@@ -48,6 +48,6 @@ This project was created as part of my learning journey.
 
 ## 🌐 Live Demo
 
-[[https://your-knopchhq.github.io/dragon-shop/](https://knopchhq.github.io/Dragon-shop/)]
+[[https://knopchhq.github.io/dragon-shop/](https://knopchhq.github.io/Dragon-shop/)]
 
 
