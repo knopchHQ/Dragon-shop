@@ -20,7 +20,7 @@
     </nav>
 
     <header class="catalog-header">
-      <h1 class="introduction">Meet our legendary dragons. Choose your guardian.</p>
+      <h1 class="introduction">Meet our legendary dragons. Choose your guardian.</h1>
     </header>
 
     <main>
@@ -29,8 +29,40 @@
       </section>
 
       <section class="catalog-page">
+          
+          <div class="sort-container">
+            <label for="sort-selector">Sort by:</label>
+            <select id="sort-selector">
+              <option value="default">Default</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+            </select>
+
+            <label for="rarity-selector">Sort by rarity:</label>
+            <select id="rarity-selector">
+              <option value="default">Default</option>
+              <option value="rarity-asc">Rarity: Low to High</option>
+              <option value="rarity-desc">Rarity: High to Low</option>
+            </select>
+
+            <label for="element-selector">Sort by element:</label>
+            <select id="element-selector">
+              <option value="all">All</option>              
+              <option value="fire">Fire</option>
+              <option value="ice">Ice</option>
+              <option value="lightning">Lightning</option>
+              <option value="earth">Earth</option>
+              <option value="water">Water</option>
+              <option value="shadow">Shadow</option>              
+              <option value="nature">Nature</option>
+              <option value="wind">Wind</option>
+              <option value="void">Void</option>
+            </select>
+          </div>
+
         <div class="catalog-grid">
 
+          <!-- Fire Dragon card -->
           <article class="catalog-card">
             <img class="img-dragon-card" src="thumbnails/Fire-Dragon.jpg" alt="Image of a Fire Dragon breathing fire">
             <h3 class="dragon-title fire-glow glow-pulse">🔥 Fire Dragon</h3>
@@ -40,11 +72,13 @@
                 Born in the heart of volcanoes, the Fire Dragon scorches enemies with blazing breath and guards ancient treasures. Its scales radiate heat strong enough to melt steel.
               </p>
             </div>
-            <p class="short-desc">Master of flames and volcanoes.</p>
+            <p>Element: <span class="fire">Fire</span><br>
+               Rarity: <span class="rare">Rare</span></p>
             <p class="price">800G</p>
             <button class="buy">Buy</button>
           </article>
 
+          <!-- Icy Wyrm card -->
           <article class="catalog-card">
             <img class="img-dragon-card" src="thumbnails/Ice-Wyrm.jpg" alt="Image of an Ice Wyrm">
             <h3 class="dragon-title ice-glow glow-pulse">❄️ Ice Wyrm</h3>
@@ -55,10 +89,148 @@
                 Ruler of the frozen wastelands, the Ice Wyrm freezes everything in its path. Its breath turns air into frost and enemies into ice statues.
               </p>
             </div>
-            <p class="short-desc">Silent guardian of the frozen wastes.</p>
+            <p>Element: <span class="ice">Ice</span><br>
+               Rarity: <span class="uncommon">Uncommon</span></p>
             <p class="price">600G</p>
             <button class="buy">Buy</button>
           </article>
+
+          <!-- Storm Serpent card -->
+          <div class="catalog-card">
+            <img class="img-dragon-card" src="thumbnails/Storm-Serpent.jpg" alt="Image of a Storm Serpent in a storm">
+            <h3 class="dragon-title storm-glow glow-pulse">⚡ Storm Serpent</h3>
+            <button class="toggle-description">Read more</button>
+
+            <div class="dragon-description hidden">
+              <p>
+                Born of thunder and lightning. The Storm Serpent rides the wind through hurricanes, calls down thunder with its roar, and wields lightning as its weapon.
+              </p>
+            </div>
+            <p>Element: <span class="lightning">Lightning</span><br>
+               Rarity: <span class="epic">Epic</span></p>
+            <p class="price">1200G</p>
+            <button class="buy">Buy</button>
+          </div>
+
+          <!-- Forest Guardian card -->
+          <div class="catalog-card">
+            <img class="img-dragon-card" src="thumbnails/Forest-Guardian.jpg" alt="Image of a Forest Dragon">
+            <h3 class="dragon-title nature-glow glow-pulse">Forest Guardian</h3>
+            <button class="toggle-description">Read more</button>
+
+            <div class="dragon-description hidden">
+              <p>
+                Guardian of forests and life. The Nature Dragon controls plants, heals allies, and awakens ancient spirits of the earth.
+              </p>
+            </div>
+            <p>Element: <span class="nature">Nature</span><br>
+               Rarity: <span class="rare">Rare</span></p>
+            <p class="price">950G</p>
+            <button class="buy">Buy</button>
+          </div>
+
+          <!-- Shadow Wyvern card -->
+          <div class="catalog-card">
+            <img class="img-dragon-card" src="thumbnails/Shadow-Wyvern.jpg" alt="Image of a very rare Shadow Wyvern that can be found only in darkness">
+            <h3 class="dragon-title shadow-glow glow-pulse">Shadow Wyvern</h3>
+            <button class="toggle-description">Read more</button>
+
+            <div class="dragon-description hidden">
+              <p>
+                Dweller of darkness and nightmares. The Shadow Dragon moves in silence and vanishes without a trace. It is believed to guard long-forgotten secrets.
+              </p>
+            </div>
+            <p>Element: <span class="shadow">Shadow</span><br>
+               Rarity: <span class="legendary">Legendary</span></p>
+            <p class="price">1800G</p>
+            <button class="buy">Buy</button>
+          </div>
+
+          <!-- Lightning Drake card -->
+          <div class="catalog-card">
+            <img class="img-dragon-card" src="thumbnails/Lightning-Drake.jpg" alt="">
+            <h3 class="dragon-title lightning-glow glow-pulse">Lightning Drake</h3>
+            <button class="toggle-description">Read more</button>
+
+            <div class="dragon-description hidden">
+              <p>
+                A native of stormy mountain peaks, the Lightning Drake's wings crackle with static energy. Each flap unleashes bursts of lightning. Entire armies have been paralyzed by its wrath.
+              </p>
+            </div>
+            <p>Element: <span class="lightning">Lightning</span><br>
+               Rarity: <span class="rare">Rare</span></p>
+            <p class="price">1000G</p>
+            <button class="buy">Buy</button>
+          </div>
+
+          <!-- Earth Warden card -->
+          <div class="catalog-card">
+            <img class="img-dragon-card" src="thumbnails/Earth-Warden.jpg" alt="">
+            <h3 class="dragon-title earth-glow glow-pulse">Earth Warden</h3>
+            <button class="toggle-description">Read more</button>
+
+            <div class="dragon-description hidden">
+              <p>
+                A colossal dragon formed from ancient stone and molten rock. It slumbers beneath mountains and awakens only when nature is threatened. Its footsteps shake the land.
+              </p>
+            </div>
+            <p>Element: <span class="earth">Earth</span><br>
+               Rarity: <span class="uncommon">Uncommon</span></p>
+            <p class="price">850G</p>
+            <button class="buy">Buy</button>
+          </div>
+
+          <!-- Tidecaller Leviathan card -->
+          <div class="catalog-card">
+            <img class="img-dragon-card" src="thumbnails/Tidecaller-Leviathan.jpg" alt="">
+            <h3 class="dragon-title water-glow glow-pulse">Tidecaller Leviathan</h3>
+            <button class="toggle-description">Read more</button>
+
+            <div class="dragon-description hidden">
+              <p>
+                This ancient sea dragon commands the ocean itself. It can summon tidal waves and drown entire fleets. Sailors pray not to glimpse its silhouette beneath the waves.
+              </p>
+            </div>
+            <p>Element: <span class="water">Water</span><br>
+               Rarity: <span class="rare">Rare</span></p>
+            <p class="price">950G</p>
+            <button class="buy">Buy</button>
+          </div>
+
+          <!-- Void Reaper card -->
+          <div class="catalog-card">
+            <img class="img-dragon-card" src="thumbnails/Void-Reaper.jpg" alt="">
+            <h3 class="dragon-title void-glow glow-pulse">Void Reaper</h3>
+            <button class="toggle-description">Read more</button>
+
+            <div class="dragon-description hidden">
+              <p>
+                A shadowy dragon that slips through dimensions. It appears at dusk and vanishes into black mist. Feared for its ability to drain life energy silently.
+              </p>
+            </div>
+            <p>Element: <span class="void">Void</span><br>
+               Rarity: <span class="mythic">Mythic</span></p>
+            <p class="price">1200G</p>
+            <button class="buy">Buy</button>
+          </div>
+
+          <!-- Zephyr Drake card -->
+          <div class="catalog-card">
+            <img class="img-dragon-card" src="thumbnails/Zephyr-Drake.jpg" alt="">
+            <h3 class="dragon-title wind-glow glow-pulse">Zephyr Drake</h3>
+            <button class="toggle-description">Read more</button>
+
+            <div class="dragon-description hidden">
+              <p>
+                The Zephyr Drake rides the high mountain currents, rarely seen and never captured. Its body is light as air, and it can vanish into a gust at will. Ancient monks considered it a spirit of clarity and freedom.
+              </p>
+            </div>
+            <p>Element: <span class="wind">Wind</span><br>
+               Rarity: <span class="rare">Rare</span></p>
+            <p class="price">1050G</p>
+            <button class="buy">Buy</button>
+          </div>
+
         </div>
       </section>
     </main>

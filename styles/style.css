@@ -270,9 +270,9 @@ header h1.introduction {
   text-shadow: 0 0 6px #87cefa;
 }
 
-.storm {
-  color: #00ffff;
-  text-shadow: 0 0 6px #c084ff;
+.lightning {
+  color: #00a892;
+  text-shadow: 0 0 6px #ffffff;
 }
 
 .nature {
@@ -286,14 +286,37 @@ header h1.introduction {
   text-shadow: 0 0 6px #090016, 0 0 12px #070111;
 }
 
+.earth {
+  color: #5d2a11;
+  text-shadow: 0 0 6px #6e3d24;
+}
+
+.water {
+  color: #006aff;
+  text-shadow: 0 0 6px #7096cd;
+}
+
+.wind {
+  color: #00c3ff;
+  text-shadow: 0 0 6px #35d0ff;
+}
+
+.void {
+  color: #ee00ff;
+  text-shadow:
+  0 0 8px #7d0955,
+  0 0 16px #7876ff,
+  0 0 24px #52519b;
+}
+
 .uncommon {
   color: #4682B4;
 }
 
 
 .rare {
-  color: #300082;
-  text-shadow: 0 0 6px #300082, 0 0 12px #260956;
+  color: #0300c5;
+  text-shadow: 0 0 6px #0a0075, 0 0 12px #1b065e;
   font-style: italic;
 }
 
@@ -306,6 +329,11 @@ header h1.introduction {
   color: gold;
   font-weight: bold;
   text-shadow: 0 0 6px gold, 0 0 12px goldenrod;
+}
+
+.mythic {
+  color: #5c0d84;
+  text-shadow: 0 0 6px #9932cc, 0 0 12px #732899;
 }
 
 /* ===== Buy button ===== */
@@ -420,7 +448,7 @@ footer a {
 
 .catalog-card img {
   width: 100%;
-  height: 9.375rem;
+  height: 12rem;
   object-fit: cover;
   border-radius: 6px;
 }
@@ -552,6 +580,45 @@ body.lore-page {
   0 0 24px #555555;
 }
 
+.lightning-glow {
+  color: #4144a4;
+  text-shadow:
+  0 0 8px #00bfff,
+  0 0 16px #87cefa,
+  0 0 24px #add8e6;
+}
+
+.earth-glow {
+  color: #582907; 
+  text-shadow:
+  0 0 8px #6f2e00,
+  0 0 16px #724e35,
+  0 0 24px #553d2c;
+}
+
+.water-glow {
+  color: #006aff;
+  text-shadow:
+  0 0 8px #413fcf,
+  0 0 16px #7876ff,
+  0 0 24px #52519b;
+}
+
+.void-glow {
+  color: #ee00ff;
+  text-shadow:
+  0 0 8px #7d0955,
+  0 0 16px #7876ff,
+  0 0 24px #52519b;
+}
+
+.wind-glow {
+  color: #02b4c8;
+  text-shadow:
+  0 0 8px hsl(206, 99%, 61%),
+  0 0 16px #72a5c3,
+  0 0 24px #6cb2bc;
+}
 
 /* ===== Contact Page ===== */
 
