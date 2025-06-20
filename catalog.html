@@ -31,6 +31,8 @@
       <section class="catalog-page">
           
           <div class="sort-container">
+            <input type="text" id="search-input" placeholder="Type what you seek...">
+            <button id="reset-filters">Reset Filters</button>
             <label for="sort-selector">Sort by:</label>
             <select id="sort-selector">
               <option value="default">Default</option>
@@ -61,6 +63,8 @@
           </div>
 
         <div class="catalog-grid">
+
+          <p id="no-results" class="hidden">Nothing found</p>
 
           <!-- Fire Dragon card -->
           <article class="catalog-card">

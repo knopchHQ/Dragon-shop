@@ -16,8 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
         background: '#fff8ee',
         color: '#2c1b0f',
         confirmButtonColor: '#6d2c15'
-
-    
       })
     });
   });
