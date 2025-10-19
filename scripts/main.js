@@ -21,23 +21,111 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 //
-// Burger-Menu
-function toggleMenu() {
-  const menu = document.getElementById("burger-menu");
-  menu.classList.toggle("active");
+// ===== NAVIGATION CONTROLLER =====
 
-  // Reset animation to play again
-  const items = menu.querySelectorAll("li");
-  items.forEach((item, i) => {
-    void item.offsetWidth; //reset animation
-    item.style.animation = `slideIn 0.4s ease forwards ${i * 0.1}s`;
+// Initialize navigation based on viewport
+function initNavigation() {
+  const isMobile = window.innerWidth <= 768;
+  
+  if (isMobile) {
+    initMobileNavigation();
+  } else {
+    initDesktopNavigation();
+  }
+}
+
+// ===== DESKTOP NAVIGATION =====
+
+function initDesktopNavigation() {
+  const sidebar = document.querySelector('.desktop-sidebar');
+  
+  // Start collapsed on page load
+  sidebar.classList.remove('expanded');
+  
+  // Auto-collapse when clicking outside (optional)
+  document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target) && sidebar.classList.contains('expanded')) {
+      toggleDesktopMenu();
+    }
   });
 }
 
-// Auto-collapse when clicking on a link
-document.querySelectorAll('#burger-menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.getElementById('burger-menu').classList.remove('active');
+function toggleDesktopMenu() {
+  const sidebar = document.querySelector('.desktop-sidebar');
+  const isExpanding = !sidebar.classList.contains('expanded');
+  
+  sidebar.classList.toggle('expanded');
+  
+  // Update logo button text based on state
+  const logoButton = document.querySelector('.logo-button');
+  logoButton.textContent = isExpanding ? '✕' : '🐉';
+}
+
+// ===== MOBILE NAVIGATION =====
+
+function initMobileNavigation() {
+  // Close mobile menu when clicking links
+  document.querySelectorAll('.mobile-burger-menu a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+}
+
+function toggleMobileMenu() {
+  const mobileMenu = document.getElementById('mobile-menu');
+  const overlay = document.getElementById('mobile-overlay');
+  
+  if (mobileMenu.classList.contains('active')) {
+    closeMobileMenu();
+  } else {
+    openMobileMenu();
+  }
+}
+
+function openMobileMenu() {
+  document.getElementById('mobile-menu').classList.add('active');
+  document.getElementById('mobile-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileMenu() {
+  document.getElementById('mobile-menu').classList.remove('active');
+  document.getElementById('mobile-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// ===== UNIVERSAL MENU TOGGLE (for backward compatibility) =====
+
+function toggleMenu() {
+  const isMobile = window.innerWidth <= 768;
+  
+  if (isMobile) {
+    toggleMobileMenu();
+  } else {
+    toggleDesktopMenu();
+  }
+}
+
+// ===== EVENT LISTENERS & INITIALIZATION =====
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize navigation system
+  initNavigation();
+  
+  // Re-initialize on window resize
+  let resizeTimeout;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(initNavigation, 250);
+  });
+  
+  // Auto-close desktop menu when clicking navigation links
+  document.querySelectorAll('.burger-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth > 768) {
+        // Keep desktop menu open on link click
+        // toggleDesktopMenu(); // Uncomment if you want it to close
+      }
+    });
   });
 });
 //

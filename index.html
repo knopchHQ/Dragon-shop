@@ -10,15 +10,74 @@
 </head>
 <body>
   
-    <nav class="navbar">
-      <div class="logo-button" onclick="toggleMenu()">🐉</div>
-      <ul class="burger-menu" id="burger-menu">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="catalog.html">Catalog</a></li>
-        <li><a href="lore.html">Lore</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+<!-- Updated Navigation Section -->
+<nav class="navbar">
+  <!-- Desktop Sidebar -->
+  <div class="desktop-sidebar">
+    <div class="logo-button" onclick="toggleMenu()">🐉</div>
+    <ul class="burger-menu" id="burger-menu">
+      <li>
+        <a href="index.html" aria-current="page">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="catalog.html">
+          <span class="nav-icon">🐉</span>
+          <span class="nav-text">Catalog</span>
+        </a>
+      </li>
+      <li>
+        <a href="lore.html">
+          <span class="nav-icon">📜</span>
+          <span class="nav-text">Lore</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          <span class="nav-icon">✉️</span>
+          <span class="nav-text">Contact</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+  <!-- Mobile Menu Button (only visible on mobile) -->
+  <button class="mobile-menu-button" onclick="toggleMobileMenu()">🐉</button>
+  
+  <!-- Mobile Overlay Menu -->
+  <div class="mobile-overlay" id="mobile-overlay" onclick="closeMobileMenu()"></div>
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
+    <ul class="mobile-burger-menu">
+      <li>
+        <a href="index.html" aria-current="page">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="catalog.html">
+          <span class="nav-icon">🐉</span>
+          <span class="nav-text">Catalog</span>
+        </a>
+      </li>
+      <li>
+        <a href="lore.html">
+          <span class="nav-icon">📜</span>
+          <span class="nav-text">Lore</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          <span class="nav-icon">✉️</span>
+          <span class="nav-text">Contact</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
     
   <header>
     <h1 class="introduction">~Welcome!~<br>You entered very special shop! Here you can buy yourself very real and dangerous Dragons! But don't be afraid they don't bite. Maybe a little</h1>
